@@ -1,10 +1,21 @@
 package com.mitocode.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="persona")
 public class Persona {
 
+	@Id
 	private int idPersona;
-	private String Nombres;
-	private String Apellidos;
+	@Column(name="nombres")
+	private String nombres;
+	@Column(name="apellidos")
+	private String apellidos;
+	@Column(name="edad")
 	private int edad;
 
 	public Persona(){}
@@ -12,8 +23,8 @@ public class Persona {
 	public Persona(int i, String string, String string2, int j) {
 		// TODO Auto-generated constructor stub
 		this.idPersona=i;
-		this.Nombres=string;
-		this.Apellidos=string2;
+		this.nombres=string;
+		this.apellidos=string2;
 		this.edad=j;
 	}
 
@@ -26,19 +37,19 @@ public class Persona {
 	}
 
 	public String getNombres() {
-		return Nombres;
+		return nombres;
 	}
 
 	public void setNombres(String nombres) {
-		Nombres = nombres;
+		this.nombres = nombres;
 	}
 
 	public String getApellidos() {
-		return Apellidos;
+		return apellidos;
 	}
 
 	public void setApellidos(String apellidos) {
-		Apellidos = apellidos;
+		this.apellidos = apellidos;
 	}
 
 	public int getEdad() {
